@@ -1,0 +1,22 @@
+# robots.txt for HireX Job Portal
+# https://hirex.com
+
+# Allow all well-behaved crawlers
+User-agent: *
+Allow: /
+Allow: /jobs
+Allow: /register
+Allow: /login
+
+# Block authenticated/private sections
+Disallow: /jobseeker/
+Disallow: /manager/
+Disallow: /admin/
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /src/
+
+# Sitemap location
+Sitemap: https://hirex.com/sitemap.xml
