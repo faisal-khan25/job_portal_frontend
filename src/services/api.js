@@ -1,9 +1,13 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL:"https://new-backend-job-portal.onrender.com",
   withCredentials: true
-});       
+});
+
+// "https://new-backend-job-portal.onrender.com"
+// "http://localhost:8080/api"
+
 // Attach JWT token
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
