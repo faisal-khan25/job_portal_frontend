@@ -1,11 +1,21 @@
 import axios from 'axios';
 
+// const api = axios.create({
+//   baseURL: `${import.meta.env.VITE_API_URL || 'https://new-backend-job-portal.onrender.com'}`,
+// });
+import axios from 'axios';
+
+// Get the raw URL and safely remove any accidental trailing slash
+const rawBaseUrl = import.meta.env.VITE_API_URL || 'https://new-backend-job-portal.onrender.com';
+const sanitizedBaseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
+
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL || 'https://new-backend-job-portal.onrender.com'}/api`,
+  baseURL: `${sanitizedBaseUrl}/api`,
+  withCredentials: true // Crucial to match 'setAllowCredentials(true)' in Spring Boot
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
+ const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
