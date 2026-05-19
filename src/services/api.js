@@ -3,7 +3,6 @@ import axios from 'axios';
 // const api = axios.create({
 //   baseURL: `${import.meta.env.VITE_API_URL || 'https://new-backend-job-portal.onrender.com'}`,
 // });
-import axios from 'axios';
 
 // Get the raw URL and safely remove any accidental trailing slash
 const rawBaseUrl = import.meta.env.VITE_API_URL || 'https://new-backend-job-portal.onrender.com';
