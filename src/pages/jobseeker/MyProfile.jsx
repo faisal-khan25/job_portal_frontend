@@ -19,7 +19,7 @@ export default function MyProfile() {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      await api.post('/jobseeker/profile', form);
+      await api.post('/api/jobseeker/profile', form);
       setSuccess('Profile saved successfully!');
       setError('');
     } catch {
