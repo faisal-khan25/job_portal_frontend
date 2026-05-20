@@ -5,7 +5,7 @@ import {
 } from 'recharts';
 
 export default function AdminDashboard() {
-  const { data: stats, loading } = useFetch('/admin/dashboard');
+  const { data: stats, loading } = useFetch('/api/admin/dashboard');
 
   if (loading) return <div className="loading">Loading dashboard...</div>;
   if (!stats) return null;

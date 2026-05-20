@@ -6,7 +6,7 @@ import api from '../../services/api';
 const STATUS_OPTIONS = ['APPLIED', 'SHORTLISTED', 'REJECTED', 'HIRED'];
 
 export default function Applicants() {
-  const { data: jobs, loading } = useFetch('/manager/jobs');
+  const { data: jobs, loading } = useFetch('/api/manager/jobs');
   const [selectedJob, setSelectedJob] = useState(null);
   const [applicants, setApplicants] = useState([]);
   const [loadingApps, setLoadingApps] = useState(false);
@@ -15,7 +15,7 @@ export default function Applicants() {
     setSelectedJob(job);
     setLoadingApps(true);
     try {
-      const res = await api.get(`/manager/jobs/${job.id}/applicants`);
+      const res = await api.get(`/api/manager/jobs/${job.id}/applicants`);
       setApplicants(res.data);
     } catch {
       setApplicants([]);
@@ -25,8 +25,8 @@ export default function Applicants() {
   };
 
   const updateStatus = async (appId, status) => {
-    await api.put(`/manager/applications/${appId}/status`, { status });
-    const res = await api.get(`/manager/jobs/${selectedJob.id}/applicants`);
+    await api.put(`/api/manager/applications/${appId}/status`, { status });
+    const res = await api.get(`/api/manager/jobs/${selectedJob.id}/applicants`);
     setApplicants(res.data);
   };
 

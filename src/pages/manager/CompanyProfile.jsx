@@ -3,7 +3,7 @@ import { useFetch, useForm } from '../../hooks/useHooks';
 import api from '../../services/api';
 
 export default function CompanyProfile() {
-  const { data: company, loading } = useFetch('/manager/company');
+  const { data: company, loading } = useFetch('/api/manager/company');
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
