@@ -15,7 +15,7 @@ export default function Register() {
     e.preventDefault();
     setError(''); setLoading(true);
     try {
-      const res = await api.post('/api/auth/register', form);
+      const res = await api.post('/auth/register', form);
       login({ name: res.data.name, email: res.data.email, role: res.data.role }, res.data.token);
       if (res.data.role === 'MANAGER') navigate('/manager/company');
       else navigate('/jobseeker/browse');
