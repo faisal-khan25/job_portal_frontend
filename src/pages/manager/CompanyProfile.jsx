@@ -24,7 +24,7 @@ export default function CompanyProfile() {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      await api.post('/manager/company', { ...form, size: Number(form.size) });
+      await api.post('/api/manager/company', { ...form, size: Number(form.size) });
       setSuccess('Company profile saved successfully 🎉');
       setError('');
     } catch (e) {
