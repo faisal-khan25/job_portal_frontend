@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/common/ProtectedRoute';
@@ -11,9 +12,9 @@ import BrowseJobs from './pages/jobseeker/BrowseJobs';
 import MyApplications from './pages/jobseeker/MyApplications';
 import MyProfile from './pages/jobseeker/MyProfile';
 import CompanyProfile from './pages/manager/CompanyProfile';
-import ManageJobs from './pages/manager/ManageJobs';
+// import ManageJobs from './pages/manager/ManageJobs';
 import Applicants from './pages/manager/Applicants';
-import AdminDashboard from './pages/admin/AdminDashboard';
+// import AdminDashboard from './pages/admin/AdminDashboard';
 
 // layouts
 import JobSeekerLayout from './components/jobseeker/JobSeekerLayout';
@@ -21,6 +22,18 @@ import ManagerLayout from './components/manager/ManagerLayout';
 import AdminLayout from './components/admin/AdminLayout';
 
 function App() {
+  const ManageJobs = lazy(() => import('./pages/manager/ManageJobs'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const BrowseJobs = lazy(() => import('./pages/jobseeker/BrowseJobs'));
+// ... same for all pages
+
+// Wrap Routes in Suspense:
+<Suspense fallback={<div style={{padding:'2rem',textAlign:'center'}}>Loading...</div>}>
+  <Routes>
+    {/* your routes */}
+  </Routes>
+</Suspense>
+  //new add upside
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -47,7 +60,7 @@ function App() {
           } />
 
           {/* manager routes */}
-          <Route path="/manager/*" element={
+          {/* <Route path="/manager/*" element={
             <ProtectedRoute role="MANAGER">
               <ManagerLayout>
                 <Routes>
@@ -58,7 +71,19 @@ function App() {
                 </Routes>
               </ManagerLayout>
             </ProtectedRoute>
-          } />
+          } /> */}
+          <Route path="/manager" element={
+  <ProtectedRoute role="MANAGER">
+    <ManagerLayout />
+  </ProtectedRoute>
+}>
+  <Route path="jobs" element={<ManageJobs />} />
+  <Route path="company" element={<CompanyProfile />} />
+  <Route path="applicants" element={<Applicants />} />
+  <Route index element={<Navigate to="jobs" />} />
+</Route>
+
+          
 
           {/* admin routes */}
           <Route path="/admin/*" element={
