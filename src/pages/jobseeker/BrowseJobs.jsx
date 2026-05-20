@@ -13,13 +13,13 @@ export default function BrowseJobs() {
   const [coverLetter, setCoverLetter] = useState('');
   const [applyMsg, setApplyMsg] = useState('');
 
-  const url = searched ? `/jobs/browse?keyword=${searched}` : '/jobs/browse';
+  const url = searched ? `/api/jobs/browse?keyword=${searched}` : '/api/jobs/browse';
   const { data: jobs, loading } = useFetch(url, [searched]);
 
   const handleSearch = (e) => { e.preventDefault(); setSearched(keyword); };
   const handleApply = async () => {
     try {
-      const res = await api.post(`/jobseeker/apply/${applyModal.id}`, { coverLetter });
+      const res = await api.post(`/api/jobseeker/apply/${applyModal.id}`, { coverLetter });
       setApplyMsg(res.data);
     } catch (e) {
       setApplyMsg(e.response?.data?.error || 'Failed to apply');
