@@ -16,7 +16,7 @@ export default function Login() {
     setError('');
     setLoading(true);
     try {
-      const res = await api.post('/api/auth/login', form);
+      const res = await api.post('/auth/login', form);
       login({ name: res.data.name, email: res.data.email, role: res.data.role }, res.data.token);
       const paths = { JOBSEEKER: '/jobseeker/browse', MANAGER: '/manager/jobs', ADMIN: '/admin/dashboard' };
       navigate(paths[res.data.role] || '/');
