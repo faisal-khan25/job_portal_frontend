@@ -1,22 +1,23 @@
 # robots.txt for HireX Job Portal
-# https://hirex.com
-
+# https://job-portal-frontend-avtp.onrender.com
+ 
 # Allow all well-behaved crawlers
 User-agent: *
 Allow: /
 Allow: /jobs
 Allow: /register
 Allow: /login
-
+ 
 # Block authenticated/private sections
 Disallow: /jobseeker/
 Disallow: /manager/
 Disallow: /admin/
-
-# Block common non-content paths
+ 
+# Block API and build artifacts
 Disallow: /api/
-Disallow: /*.json$
 Disallow: /src/
-
+Disallow: /*.json$
+ 
 # Sitemap location
-Sitemap: https://hirex.com/sitemap.xml
+Sitemap: https://job-portal-frontend-avtp.onrender.com/sitemap.xml
+ 

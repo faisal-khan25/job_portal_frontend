@@ -1,46 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Homepage -->
-  <url>
-    <loc>https://hirex.com/</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Browse Jobs (public) -->
-  <url>
-    <loc>https://hirex.com/jobs</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Register -->
-  <url>
-    <loc>https://hirex.com/register</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Login -->
-  <url>
-    <loc>https://hirex.com/login</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!--
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  Homepage  -->
+<url>
+<loc>https://job-portal-frontend-avtp.onrender.com/</loc>
+<lastmod>2026-05-20</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+<!--  Browse Jobs (public)  -->
+<url>
+<loc>https://job-portal-frontend-avtp.onrender.com/jobs</loc>
+<lastmod>2026-05-20</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  Register  -->
+<url>
+<loc>https://job-portal-frontend-avtp.onrender.com/register</loc>
+<lastmod>2026-05-20</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<!--  Login  -->
+<url>
+<loc>https://job-portal-frontend-avtp.onrender.com/login</loc>
+<lastmod>2026-05-20</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<!-- 
     NOTE: Protected routes (/jobseeker/*, /manager/*, /admin/*)
-    are excluded from the sitemap because they require authentication
-    and should not be indexed by search engines.
-  -->
-
+    are excluded because they require authentication
+    and should NOT be indexed by search engines.
+   -->
 </urlset>
