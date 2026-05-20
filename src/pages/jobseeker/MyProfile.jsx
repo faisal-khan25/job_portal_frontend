@@ -3,7 +3,7 @@ import { useFetch, useForm } from '../../hooks/useHooks';
 import api from '../../services/api';
 
 export default function MyProfile() {
-  const { data: profile, loading } = useFetch('/jobseeker/profile');
+  const { data: profile, loading } = useFetch('/api/jobseeker/profile');
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
