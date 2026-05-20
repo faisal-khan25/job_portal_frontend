@@ -1,11 +1,12 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:"http://localhost:8080/api",
+  baseURL:"https://new-backend-job-portal.onrender.com",
   withCredentials: true
 });
 
 // "https://new-backend-job-portal.onrender.com"
+
 // "http://localhost:8080/api"
 
 // Attach JWT token
