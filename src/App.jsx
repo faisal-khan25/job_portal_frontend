@@ -14,7 +14,7 @@ import MyProfile from './pages/jobseeker/MyProfile';
 import CompanyProfile from './pages/manager/CompanyProfile';
  import ManageJobs from './pages/manager/ManageJobs';
 import Applicants from './pages/manager/Applicants';
-// import AdminDashboard from './pages/admin/AdminDashboard';
+ import AdminDashboard from './pages/admin/AdminDashboard';
 
 // layouts
 import JobSeekerLayout from './components/jobseeker/JobSeekerLayout';
