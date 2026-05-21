@@ -12,7 +12,7 @@ import BrowseJobs from './pages/jobseeker/BrowseJobs';
 import MyApplications from './pages/jobseeker/MyApplications';
 import MyProfile from './pages/jobseeker/MyProfile';
 import CompanyProfile from './pages/manager/CompanyProfile';
-// import ManageJobs from './pages/manager/ManageJobs';
+ import ManageJobs from './pages/manager/ManageJobs';
 import Applicants from './pages/manager/Applicants';
 // import AdminDashboard from './pages/admin/AdminDashboard';
 
