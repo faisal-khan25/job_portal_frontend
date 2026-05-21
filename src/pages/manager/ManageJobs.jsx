@@ -14,7 +14,7 @@ const emptyJob = {
 export default function ManageJobs() {
 
   // FETCH JOBS
-  const { data, loading } = useFetch('/api/manager/jobs');
+  const { data, loading } = useFetch('/manager/jobs');
 
   // LOCAL STATE
   const [jobs, setJobs] = useState([]);
@@ -56,7 +56,7 @@ export default function ManageJobs() {
       if (editingId) {
 
         await api.put(
-          `/api/manager/jobs/${editingId}`,
+          `/manager/jobs/${editingId}`,
           form
         );
 
@@ -72,7 +72,7 @@ export default function ManageJobs() {
       } else {
 
         const res = await api.post(
-          '/api/manager/jobs',
+          '/manager/jobs',
           form
         );
 
@@ -106,7 +106,7 @@ export default function ManageJobs() {
     try {
 
       await api.delete(
-        `api/manager/jobs/${id}`
+        `/manager/jobs/${id}`
       );
 
       // REMOVE FROM FRONTEND
